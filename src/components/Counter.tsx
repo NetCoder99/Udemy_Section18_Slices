@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useSelector, useDispatch, RootStateOrAny } from "react-redux";
 import classes from "./Counter.module.css";
-import { counterActions, toggleActions } from "../store/counterStore";
+import { counterActions } from "../store/counterSlice";
+import { toggleActions } from "../store/toggleSlice";
 //import { sleep } from "../store/sleep";
 
 const Counter = () => {
@@ -9,7 +10,6 @@ const Counter = () => {
 
   const counter   = useSelector((state: RootStateOrAny) => state.counter);
   const toggle    = useSelector((state: RootStateOrAny) => state.toggle);
-  
   const [isLoading, setIsLoading] = useState(false);
   
   
